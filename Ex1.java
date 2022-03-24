@@ -35,11 +35,14 @@ public class Ex1 {
                 }
             }
         } else if (x.length() == 3){
-            if (n < 120){
+           char f = x.charAt(1);
+           int g = Integer.parseInt(String.valueOf(f));
+            if (g == 1){
                 char i = x.charAt(0);
                 int h = Integer.parseInt(String.valueOf(i));
                 int c = h-1;
-                int u = n-100;
+                int v = h * 100;
+                int u = n-v;
                 System.out.println(centena[c] + " e " + unidade[u]);
             } else {
                 char l = x.charAt(0);                
@@ -53,7 +56,21 @@ public class Ex1 {
                 int c = j-1;
                 int d = h-2;
                 
-                System.out.println(centena[c] + " e " + dezena[d] + " e " + unidade[u]);
+                if (u == 0){
+                    if (d != -2){
+                    System.out.println(centena[c] + " e " + dezena[d]);
+                    } else {
+                        if (c == 0) {
+                        System.out.println("Cem");
+                        } else {
+                        System.out.println(centena[c]);
+                        }
+                    }
+                } else if (d == -2){
+                    System.out.println(centena[c] + " e " + unidade[u]);
+                } else {
+                System.out.println(centena[c] + " e " + dezena[d] + " e " + unidade[u]);  
+                }
             }
         }
     }
